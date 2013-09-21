@@ -1,0 +1,57 @@
+body
+{
+    margin: 0px 0px 0px 0px;
+}
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+#error
+{
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:10px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('error.png');
+    text-align: center;
+}
+#top_logo_container
+{
+    background: url('top_bar_background.png') repeat-x;
+}
+#main_container
+{
+    float:left;
+    margin: 0px 0px 0px 0px;
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: center;
+    border-left: 1px solid #CCCCCC;
+    min-height:350px;
+    width: 600px;
+}
+#menu
+{
+    float:left;
+    margin: 0px 0px 0px 0px;
+    width: 300px;
+    min-height:350px;
+}
+.left_content
+{
+    float: left;
+    text-align: right;
+    width: 200px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+}
+.right_content
+{
+    float: left;
+    text-align: left;
+    width: 350px;
+    padding-bottom: 5px;
+}
