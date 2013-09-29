@@ -91,10 +91,10 @@ function move_file($file_name, $username, $tmp_path) {
 }
 
 function short_name($file_name, $number) {
-    if (mb_strlen($file_name > 10)) {
-        $extension = explode(".", strtolower($file['name'][$file_index]));
+    if (mb_strlen($file_name) > 10) {
+        $extension = explode(".", strtolower($file_name));
         $extension = end($extension);
-        $file_name = substr($file_name, 0, 10) . $extension;
+        $file_name = substr($file_name, 0, 10) . '.'.$extension;
     }
     return $number . $file_name;
 }
