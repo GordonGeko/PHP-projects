@@ -12,19 +12,23 @@ if (isset($_SESSION['loggedIn'])) {
         $username = escape_input($_POST['username']);
         $password = escape_input($_POST['password']);
         if (!check_user_exists($username)) {
-            if (!mkdir('personal_folders/' . $username, 0644)) {
-                $error = "Неуспешно създаване на лична папка!";
-            } else {
-                $htaccess = '<Files ~ ".*$">' . PHP_EOL . 'Order Deny,Allow' . PHP_EOL . 'Deny from all' . PHP_EOL . '</Files>';
-                if (file_put_contents('personal_folders/' . $username . '/.htaccess', $htaccess) != FALSE) {
-                    $_SESSION['loggedIn'] = true;
-                    $_SESSION['username'] = $username;
-                    add_user($username, $password);
-                    header("Location: list.php");
-                    exit();
+            if (!file_exists('personal_folders/' . $username)) {
+                if (!mkdir('personal_folders/' . $username, 0644)) {
+                    $error = "Неуспешно създаване на лична папка!";
                 } else {
-                    $error = "Неуспешно създаване на нужните файлове за регистрация!";
+                    $htaccess = '<Files ~ ".*$">' . PHP_EOL . 'Order Deny,Allow' . PHP_EOL . 'Deny from all' . PHP_EOL . '</Files>';
+                    if (file_put_contents('personal_folders/' . $username . '/.htaccess', $htaccess) != FALSE) {
+                        $_SESSION['loggedIn'] = true;
+                        $_SESSION['username'] = $username;
+                        add_user($username, $password);
+                        header("Location: list.php");
+                        exit();
+                    } else {
+                        $error = "Неуспешно създаване на нужните файлове за регистрация!";
+                    }
                 }
+            } else {
+                $error = "Потребителят вече съществува!";
             }
         } else {
             $error = "Този потребител вече съществува!";

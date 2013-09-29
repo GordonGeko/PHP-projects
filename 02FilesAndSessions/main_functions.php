@@ -14,7 +14,7 @@ function validate_data($data, $type, $min_length, $max_length) {
             return TRUE;
         }
     } else {
-        return $fill . 'съдържа невалидни символи - позволени са цифри, букви и знаците: - и _!';
+        return $fill . 'съдържа невалидни символи - позволени са само цифри и букви(малки и големи)!';
     }
 }
 
