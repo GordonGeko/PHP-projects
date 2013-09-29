@@ -1,2 +1,3 @@
 qwerty<123456
 someone<longjohn
+undefinedUser<secret
