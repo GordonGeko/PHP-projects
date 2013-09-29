@@ -1,6 +1,6 @@
 <?php
 $title = "Формуляр за вход";
-require_once 'header.php';
+require_once 'includes/header.php';
 require_once 'main_functions.php';
 if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     session_unset();
@@ -64,5 +64,5 @@ if (isset($error)) {
     </div>
 </div>
 <?php
-include 'footer.php';
+include 'includes/footer.php';
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if (isset($_GET['file']) && isset($_SESSION['loggedIn'])) {
     $file_name = str_replace(array('/', '\\', '?', ':', '*', '<', '>', '|', '"'), '', rawurldecode($_GET['file']));
@@ -10,9 +9,9 @@ if (isset($_GET['file']) && isset($_SESSION['loggedIn'])) {
         header("Content-disposition: attachment; filename=\"" . $file_name . "\"");
         readfile($file_url);
     } else {
-        //header("Location: list.php");
+        header("Location: list.php");
     }
 } else {
-    //header("Location: list.php");
+    header("Location: list.php");
 }
 ?>

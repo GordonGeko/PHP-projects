@@ -1,6 +1,6 @@
 <?php
 $title = "Форма за регистрация";
-require_once 'header.php';
+require_once 'includes/header.php';
 require_once 'main_functions.php';
 if (isset($_SESSION['loggedIn'])) {
     header("Location: list.php");
@@ -70,5 +70,5 @@ if (isset($_SESSION['loggedIn'])) {
     </div>
 </div>
 <?php
-include 'footer.php';
+include 'includes/footer.php';
 ?>

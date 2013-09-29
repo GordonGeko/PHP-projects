@@ -1,6 +1,6 @@
 <?php
 $title = "Формуляр за вход";
-require_once 'header.php';
+require_once 'includes/header.php';
 require_once 'main_functions.php';
 if (!isset($_SESSION['loggedIn'])) {
     header("Location: index.php");
@@ -60,5 +60,5 @@ if (isset($_POST['submit_checker'])) {
     ?>
 </table>
 <?php
-include 'footer.php';
+include 'includes/footer.php';
 ?>
