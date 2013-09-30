@@ -99,4 +99,18 @@ function short_name($file_name, $number) {
     return $number . $file_name;
 }
 
+function getReadableFileSize($size) {
+    if ($size < 1024) { // < 1KB
+        $result = $size . ' байта';
+    } else if ($size < (1024 * 1024)) { // < 1MB
+        $result = round($size / 1024) . ' KB';
+    } else if ($size < (1024 * 1024 * 1024)) { // < 1GB
+        $result = round($size / (1024 * 1024), 1) . ' MB';
+    } else {
+        $result = round(($size / (1024 * 1024 * 1024)), 2) . ' GB';
+    }
+ 
+    return $result;
+}
+
 ?>

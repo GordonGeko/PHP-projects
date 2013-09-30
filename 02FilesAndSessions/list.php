@@ -50,7 +50,7 @@ if (isset($_POST['submit_checker'])) {
         for ($index = 0; $index < count($file_list); $index++) {
             if ($file_list[$index]{0} != '.') {
                 $file_url = 'personal_folders/' . $_SESSION['username'] . '/' . $file_list[$index];
-                echo '<tr><td><a href="download_file.php?file='.  rawurlencode($file_list[$index]).'">' . $file_list[$index] . '</a></td><td>' . filetype($file_url) . '</td><td>' . filesize($file_url) . ' байта</td><td>' . date("d-m-y", filemtime($file_url)) . '</td></tr>';
+                echo '<tr><td><a href="download_file.php?file='.  rawurlencode($file_list[$index]).'">' . $file_list[$index] . '</a></td><td>' . filetype($file_url) . '</td><td>' . getReadableFileSize(filesize($file_url)) . '</td><td>' . date("d-m-y", filemtime($file_url)) . '</td></tr>';
             }
         }
     } else {
